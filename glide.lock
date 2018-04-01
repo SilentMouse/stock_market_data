@@ -1,0 +1,36 @@
+hash: 803c00e17783583c584b6eae0df68a394cca87952c5338fde9cb4a342cb25a09
+updated: 2018-04-01T10:21:36.79200964+03:00
+imports:
+- name: github.com/antonholmquist/jason
+  version: c23cef7eaa75a6a5b8810120e167bd590d8fd2ab
+- name: github.com/cockroachdb/cockroach-go
+  version: 59c0560478b705bf9bd12f9252224a0fad7c87df
+- name: github.com/garyburd/redigo
+  version: e8e59ed1cd89662b75af5d1109e39e5dc148cc00
+  subpackages:
+  - redis
+- name: github.com/gocraft/work
+  version: 67c8dc210ce647e8d8a4206c7f5856ea2390f290
+- name: github.com/graphql-go/graphql
+  version: 1e23489041ba90a66f317fe0deccb236a2fff3cb
+- name: github.com/graphql-go/handler
+  version: f0393b2c10daeebea900292b8e092e73475399d9
+- name: github.com/jinzhu/gorm
+  version: 6ed508ec6a4ecb3531899a69cbc746ccf65a4166
+  subpackages:
+  - dialects/postgres
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
+- name: github.com/lib/pq
+  version: 88edab0803230a3898347e77b474f8c1820a1f20
+- name: github.com/robfig/cron
+  version: b024fc5ea0e34bc3f83d9941c8d60b0622bfaca4
+- name: github.com/Sirupsen/logrus
+  version: c155da19408a8799da419ed3eeb0cb5db0ad5dbc
+- name: golang.org/x/sys
+  version: 7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce
+  subpackages:
+  - unix
+- name: google.golang.org/api
+  version: d7238a695cdc29affa1e76d5485eb2f72d30f8f8
+testImports: []

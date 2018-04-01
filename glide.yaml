@@ -1,2 +1,28 @@
 package: github.com/SilentMouse/stock_market_data
-import: []
+import:
+- package: github.com/Sirupsen/logrus
+  version: ^1.0.4
+- package: google.golang.org/api
+- package: github.com/antonholmquist/jason
+  version: ^1.0.0
+- package: github.com/lib/pq
+- package: github.com/cockroachdb/cockroach-go
+- package: github.com/graphql-go/graphql
+  version: ^0.7.4
+- package: github.com/jinzhu/gorm
+  version: ^1.0.0
+  subpackages:
+  - dialects/postgres
+- package: golang.org/x/sys
+  subpackages:
+  - unix
+- package: github.com/jinzhu/inflection
+- package: github.com/graphql-go/handler
+  version: ^0.2.1
+- package: github.com/robfig/cron
+  version: ^1.0.0
+- package: github.com/garyburd/redigo
+  subpackages:
+  - redis
+- package: github.com/gocraft/work
+  version: ^0.5.0
