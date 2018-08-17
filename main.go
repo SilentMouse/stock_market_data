@@ -22,10 +22,10 @@ func main() {
 
 	fmt.Println("Now server is running on port 5000")
 	logrus.Infoln("logrus info")
-	fmt.Println("Test with Get      : curl -g 'http://localhost:5000/graphql?query={spheres{name}}'")
+	fmt.Println("Test with Get      : curl -g 'http://localhost:5000/graphql?query={users{name}}'")
 	http.Handle("/graphql", add_headers(h))
 
-	http.ListenAndServe(":6000", nil)
+	http.ListenAndServe(":5000", nil)
 
 }
 

@@ -64,8 +64,23 @@ func InitSchema(db *models.DataBase) {
 					return db.GetUser(p), nil
 				},
 			},
+			"ticker": &graphql.Field{
+				Type:        schema_types.TickerType(db),
+				Description: "list of users",
+				Args: graphql.FieldConfigArgument{
+					"symbol": &graphql.ArgumentConfig{
+						Description: "symbol",
+						Type:        graphql.NewNonNull(graphql.String),
+					},
+				},
+				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+					return db.GetTicker(p), nil
+				},
+			},
 		},
 	})
+
+
 	StSchema, _ = graphql.NewSchema(graphql.SchemaConfig{
 		Query:    queryType,
 		Mutation: rootMutation,

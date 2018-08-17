@@ -49,6 +49,7 @@ func CreateFish() []interface{} {
 	items = append(items, &UsersUsers{})
 	items = append(items, &Provider{})
 	items = append(items, &ProvidersUsers{})
+	items = append(items, &Ticker{})
 
 	return items
 }
