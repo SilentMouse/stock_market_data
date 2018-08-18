@@ -50,6 +50,7 @@ func CreateFish() []interface{} {
 	items = append(items, &Provider{})
 	items = append(items, &ProvidersUsers{})
 	items = append(items, &Ticker{})
+	items = append(items, &Symbol{})
 
 	return items
 }

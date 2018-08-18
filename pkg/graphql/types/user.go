@@ -5,63 +5,19 @@ import (
 
 	"github.com/graphql-go/graphql"
 	models "github.com/SilentMouse/stock_market_data/pkg/models"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/SilentMouse/stock_market_data/pkg/utils"
 )
 
 
-func UserType(db *models.DataBase) *graphql.Object {
+func UserType() *graphql.Object {
 
 	var userTypeVar *graphql.Object
 
-	var userInterface = graphql.NewInterface(graphql.InterfaceConfig{
-		Name:        "user",
-		Description: "A user in the whatsbetter",
-		Fields: graphql.Fields{
-			"id": &graphql.Field{
-				Type:        graphql.NewNonNull(graphql.String),
-				Description: "The id of the user.",
-			},
-			"name": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The name of the user.",
-			},
-			"first_name": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The name of the user.",
-			},
-			"second_name": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The name of the user.",
-			},
-			"main_image": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The label of the user.",
-			},
-			"phone": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The label of the user.",
-			},
-			"email": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The label of the user.",
-			},
-			"token": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The label of the user.",
-			},
-			"created_at": &graphql.Field{
-				Type:        graphql.String,
-				Description: "The label of the user.",
-			},
-		},
-		ResolveType: func(p graphql.ResolveTypeParams) *graphql.Object {
-			return userTypeVar
-		},
-	})
+	hashgr := utils.RandToken5()
 
 	userTypeVar = graphql.NewObject(graphql.ObjectConfig{
-		Name:        "user",
-		Description: "user",
+		Name:        "User_" + hashgr,
+		Description: "User",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
 				Type:        graphql.NewNonNull(graphql.String),
@@ -153,9 +109,6 @@ func UserType(db *models.DataBase) *graphql.Object {
 					return nil, nil
 				},
 			},
-		},
-		Interfaces: []*graphql.Interface{
-			userInterface,
 		},
 	})
 

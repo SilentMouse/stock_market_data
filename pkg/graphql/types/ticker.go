@@ -5,17 +5,19 @@ import (
 
 	"github.com/graphql-go/graphql"
 	models "github.com/SilentMouse/stock_market_data/pkg/models"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/SilentMouse/stock_market_data/pkg/utils"
 )
 
 
-func TickerType(db *models.DataBase) *graphql.Object {
+func TickerType() *graphql.Object {
 
 	var TypeVar *graphql.Object
 
+	hashgr := utils.RandToken5()
+
 	TypeVar = graphql.NewObject(graphql.ObjectConfig{
-		Name:        "user",
-		Description: "user",
+		Name:        "Ticker_" + hashgr ,
+		Description: "ticker",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
 				Type:        graphql.NewNonNull(graphql.String),

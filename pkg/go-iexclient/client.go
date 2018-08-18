@@ -8,6 +8,7 @@ import (
 
 	"github.com/google/go-querystring/query"
 	"github.com/Sirupsen/logrus"
+	"github.com/SilentMouse/stock_market_data/pkg/models"
 )
 
 const baseEndpoint = "https://api.iextrading.com/1.0"
@@ -46,6 +47,14 @@ type batchRequest struct {
 type BatchQuota struct{
 	Quote Batch `json:"quote"`
 }
+
+func (c *Client) GetSymbols() (*[]models.Symbol, error) {
+	var req interface{}
+	var result *[]models.Symbol
+	err := c.getJSON("/ref-data/symbols", req, &result)
+	return result, err
+}
+
 
 //func (c *Client) GetBatch(symbol string,types string, ranges string) (*BatchQuota, error) {
 //	req := &batchRequest{types, ranges}

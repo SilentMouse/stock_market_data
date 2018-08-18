@@ -6,6 +6,6 @@ import (
 
 type Sector struct {
 	gorm.Model
-	SectorID uint
 	Name     string
+
 }

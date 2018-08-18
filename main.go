@@ -5,14 +5,16 @@ import (
 	"fmt"
 	"net/http"
 	"github.com/graphql-go/handler"
-	models "github.com/SilentMouse/stock_market_data/pkg/models"
 	st_schema "github.com/SilentMouse/stock_market_data/pkg/graphql"
 	"github.com/Sirupsen/logrus"
+	"github.com/SilentMouse/stock_market_data/pkg/models"
+	"github.com/SilentMouse/stock_market_data/pkg/controllers"
 )
 
 func main() {
 	db := models.InitDB()
-	st_schema.InitSchema(&db)
+	c := controllers.InitController(&db)
+	st_schema.InitSchema(&c)
 
 	h := handler.New(&handler.Config{
 		Schema:   &st_schema.StSchema,
@@ -22,7 +24,7 @@ func main() {
 
 	fmt.Println("Now server is running on port 5000")
 	logrus.Infoln("logrus info")
-	fmt.Println("Test with Get      : curl -g 'http://localhost:5000/graphql?query={users{name}}'")
+	fmt.Println("Test with Get      : curl -g 'http://localhost:5000/graphql?query={symbols{name}}'")
 	http.Handle("/graphql", add_headers(h))
 
 	http.ListenAndServe(":5000", nil)

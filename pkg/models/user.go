@@ -3,7 +3,6 @@ package models
 import (
 	_ "github.com/Sirupsen/logrus"
 	"github.com/jinzhu/gorm"
-	"github.com/graphql-go/graphql"
 )
 
 type User struct {
@@ -25,11 +24,4 @@ type UsersUsers struct {
 	RelationType string
 	FirstUserId  uint64
 	SecondUserId uint64
-}
-
-
-func (self *DataBase) GetUser(p graphql.ResolveParams) User{
-
-	var user User
-	return user
 }
