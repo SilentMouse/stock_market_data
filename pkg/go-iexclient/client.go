@@ -55,6 +55,13 @@ func (c *Client) GetSymbols() (*[]models.Symbol, error) {
 	return result, err
 }
 
+func (c *Client) GetCompanies(symbol string) (*models.Company, error) {
+	var req interface{}
+	var result *models.Company
+	err := c.getJSON("/stock/" + symbol + "/company", req, &result)
+	return result, err
+}
+
 
 //func (c *Client) GetBatch(symbol string,types string, ranges string) (*BatchQuota, error) {
 //	req := &batchRequest{types, ranges}

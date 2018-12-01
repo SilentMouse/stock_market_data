@@ -13,7 +13,25 @@ func (fields *GraphqlFields) AddParser(c *controllers.Controller) *GraphqlFields
 		Description: "parse symbols",
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			symbols := c.ParseSymbols(params)
-			return symbols, nil
+			return *symbols, nil
+		},
+	}
+
+	fields.Fields["parseCompany"] = &graphql.Field{
+		Type:        graphql.String,
+		Description: "parse symbols",
+		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+			c.ParseCompanies(params)
+			return "ok", nil
+		},
+	}
+
+	fields.Fields["addCompanyToSphinx"] = &graphql.Field{
+		Type:        graphql.String,
+		Description: "parse symbols",
+		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+			c.AddCompaniesToSphinx(params)
+			return "ok", nil
 		},
 	}
 

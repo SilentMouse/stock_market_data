@@ -13,6 +13,7 @@ import:
   version: ^1.0.0
   subpackages:
   - dialects/postgres
+  - dialects/mysql
 - package: golang.org/x/sys
   subpackages:
   - unix
@@ -29,3 +30,5 @@ import:
 - package: github.com/timpalpant/go-iex
   subpackages:
   - pcap2json
+- package: github.com/olivere/elastic
+  version: ^6.1.28

@@ -84,7 +84,7 @@ func SymbolType() *graphql.Object {
 				Description: "iexID",
 				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 					if symbol, ok := p.Source.(models.Symbol); ok {
-						return symbol.IexId, nil
+						return symbol.IexID, nil
 					}
 					return nil, nil
 				},

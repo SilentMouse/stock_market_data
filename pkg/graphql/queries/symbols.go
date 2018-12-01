@@ -24,6 +24,19 @@ func (fields *GraphqlFields) AddSymbols(c *controllers.Controller) *GraphqlField
 		},
 	}
 
+	fields.Fields["symbol"] = &graphql.Field{
+		Type:        graphql.NewList(schema_types.SymbolType()),
+		Description: "Symbol",
+		Args: graphql.FieldConfigArgument{
+			"id": &graphql.ArgumentConfig{
+				Type: graphql.String,
+			},
+		},
+		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+			return c.GetSymbols(p), nil
+		},
+	}
+
 
 	return fields
 

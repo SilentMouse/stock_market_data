@@ -1,5 +1,5 @@
-hash: 19f00575c087797f43e6a630862d03eb3fb816333ea09e8c831a37871e979732
-updated: 2018-05-16T18:52:52.785706058+03:00
+hash: 05a3452f08acf60838c69d5cc67f396291cd3b759e8068f969d801a20a053451
+updated: 2018-12-01T11:49:01.57795493+03:00
 imports:
 - name: github.com/antonholmquist/jason
   version: c23cef7eaa75a6a5b8810120e167bd590d8fd2ab
@@ -10,10 +10,16 @@ imports:
   subpackages:
   - internal
   - redis
+- name: github.com/go-sql-driver/mysql
+  version: 6be42e0ff99645d7d9626d779001a46e39c5f280
 - name: github.com/gocraft/work
-  version: 67c8dc210ce647e8d8a4206c7f5856ea2390f290
+  version: 1d4117a214abff263b472043871c8666aedb716b
+- name: github.com/google/go-querystring
+  version: 53e6ce116135b80d037921a7fdd5138cf32d7a8a
+  subpackages:
+  - query
 - name: github.com/graphql-go/graphql
-  version: 1e23489041ba90a66f317fe0deccb236a2fff3cb
+  version: 5c1be0872a56fba73b279434ea95dfda735abedd
   subpackages:
   - gqlerrors
   - language/ast
@@ -28,33 +34,51 @@ imports:
 - name: github.com/graphql-go/handler
   version: f0393b2c10daeebea900292b8e092e73475399d9
 - name: github.com/jinzhu/gorm
-  version: 6ed508ec6a4ecb3531899a69cbc746ccf65a4166
+  version: 472c70caa40267cb89fd8facb07fe6454b578626
   subpackages:
+  - dialects/mysql
   - dialects/postgres
 - name: github.com/jinzhu/inflection
-  version: 1c35d901db3da928c72a72d8458480cc9ade058f
+  version: 04140366298a54a039076d798123ffa108fff46c
 - name: github.com/lib/pq
-  version: 88edab0803230a3898347e77b474f8c1820a1f20
+  version: 90697d60dd844d5ef6ff15135d0203f65d2f53b8
   subpackages:
   - hstore
   - oid
+- name: github.com/mailru/easyjson
+  version: 03f2033d19d5860aef995fe360ac7d395cd8ce65
+  subpackages:
+  - buffer
+  - jlexer
+  - jwriter
+- name: github.com/olivere/elastic
+  version: 0f13c62d4153081f2be7d0e136353b57dd3f1619
+  subpackages:
+  - config
+  - uritemplates
+- name: github.com/pkg/errors
+  version: 816c9085562cd7ee03e7f8188a1cfd942858cded
 - name: github.com/robfig/cron
   version: b41be1df696709bb6395fe435af20370037c0b4c
 - name: github.com/Sirupsen/logrus
-  version: c155da19408a8799da419ed3eeb0cb5db0ad5dbc
+  version: bcd833dfe83d3cebad139e4a29ed79cb2318bf95
 - name: github.com/timpalpant/go-iex
-  version: f7ef89fb5009c5f4b7b3b24f90404d1cda3b3f14
+  version: 72db2a25b10e04fe24db614758cca0ebb1d5df6e
   subpackages:
   - pcap2json
 - name: golang.org/x/crypto
-  version: 81e90905daefcd6fd217b62423c0908922eadb30
+  version: aabede6cba87e37f413b3e60ebfc214f8eeca1b0
   subpackages:
   - ssh/terminal
 - name: golang.org/x/sys
-  version: 7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce
+  version: 1c9583448a9c3aa0f9a6a5241bf73c0bd8aafded
   subpackages:
   - unix
   - windows
 - name: google.golang.org/api
-  version: d7238a695cdc29affa1e76d5485eb2f72d30f8f8
+  version: e21acd801f91da814261b938941d193bb036441a
+- name: google.golang.org/appengine
+  version: 4a4468ece617fc8205e99368fa2200e9d1fad421
+  subpackages:
+  - cloudsql
 testImports: []

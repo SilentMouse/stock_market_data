@@ -27,7 +27,7 @@ func InitSchema(c *controllers.Controller) {
 
 	fields := queries.GraphqlFields{Fields: graphql.Fields{}}
 
-	fields.AddSymbols(c).AddTicker(c).AddUsers(c)
+	fields.AddSymbols(c).AddTicker(c).AddUsers(c).AddCompanies(c)
 
 	queryType := graphql.NewObject(graphql.ObjectConfig{
 		Name: "Query",

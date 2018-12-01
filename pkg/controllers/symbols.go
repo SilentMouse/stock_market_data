@@ -2,13 +2,11 @@ package controllers
 
 import (
 	"github.com/graphql-go/graphql"
-	"github.com/Sirupsen/logrus"
 	"github.com/SilentMouse/stock_market_data/pkg/models"
+	"github.com/Sirupsen/logrus"
 )
 
 func (c *Controller) GetSymbols(p graphql.ResolveParams) []models.Symbol{
-
-	logrus.Infoln("symbols")
 
 	var symbols []models.Symbol
 
@@ -29,4 +27,16 @@ func (c *Controller) GetSymbols(p graphql.ResolveParams) []models.Symbol{
 	).Scan(&symbols)
 
 	return symbols
+}
+
+
+func (c *Controller) GetSymbol(p graphql.ResolveParams) models.Symbol{
+
+	var symbol models.Symbol
+
+	c.Models.DB.First(&symbol,p.Args["id"].(string))
+
+	logrus.Infoln("P", symbol)
+
+	return symbol
 }

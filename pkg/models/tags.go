@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-type Sector struct {
+type Tag struct {
 	gorm.Model
 	Name     string
 }
